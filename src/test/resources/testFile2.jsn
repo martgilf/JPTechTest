@@ -1,0 +1,125 @@
+[ 
+	{ 
+		"company": "Company1",  
+		"id": 0, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 10.0, 
+			"quantity": 100
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 1, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 20.0, 
+			"quantity": 50
+		},
+		"adjustment": { 
+				"operation": "ADD", 
+				"amount": 10.0 
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 2, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 30.0, 
+			"quantity": 100
+		},
+		"adjustment": { 
+				"operation": "SUBTRACT", 
+				"amount": 10.0 
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 3, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 20.0, 
+			"quantity": 100
+		}
+	}
+	{ 
+		"company": "Company1",  
+		"id": 4, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 10.0, 
+			"quantity": 200
+		},
+		"adjustment": { 
+				"operation": "MULTIPLY", 
+				"amount": 2.0
+		} 
+	}
+	{ 
+		"company": "X", 
+		"id": 5, 
+		"product": "Apple", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}
+	}
+	{ 
+		"company": "X", 
+		"id": 6, 
+		"product": "Apple", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}, 
+		"adjustment": { 
+			"operation": "MULTIPLY", 
+			"amount": 2.0
+		}
+	}
+	{ 
+		"company": "X", 
+		"id": 7, 
+		"product": "Pear", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}
+	}
+	{ 
+		"company": "X", 
+		"id": 8, 
+		"product": "Pear", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}, 
+		"adjustment": { 
+			"operation": "ADD",	    
+			"amount": 1.5
+		}
+	}
+	{ 
+		"company": "X", 
+		"id": 10, 
+		"product": "Orange", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}, 
+	}	
+	{ 
+		"company": "X", 
+		"id": 11, 
+		"product": "Orange", 
+		"sale": {  
+			"amount": 10.0, 
+			"quantity": 500
+		}, 
+		"adjustment": { 
+			"operation": "SUBTRACT",	
+			"amount": 1.0
+		}
+	}		
+]

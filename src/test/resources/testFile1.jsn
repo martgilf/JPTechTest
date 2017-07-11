@@ -1,0 +1,59 @@
+[ 
+	{ 
+		"company": "Company1",  
+		"id": 0, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 10.6666, 
+			"quantity": 10
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 1, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 20.0, 
+			"quantity": 5
+		},
+		"adjustment": { 
+				"operation": "ADD", 
+				"amount": 3.3333333 
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 2, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 30.0, 
+			"quantity": 10
+		},
+		"adjustment": { 
+				"operation": "SUBTRACT", 
+				"amount": 6.6666666 
+		} 
+	}
+	{ 
+		"company": "Company1",  
+		"id": 3, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 20.0, 
+			"quantity": 10
+		}
+	}
+	{ 
+		"company": "Company1",  
+		"id": 4, 
+		"product": "Banana", 
+		"sale": {	
+			"amount": 10.0, 
+			"quantity": 20
+		},
+		"adjustment": { 
+				"operation": "MULTIPLY", 
+				"amount": 1.7777777 
+		} 
+	}
+]
