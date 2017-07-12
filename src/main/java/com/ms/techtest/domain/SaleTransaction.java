@@ -18,7 +18,7 @@ public class SaleTransaction extends Transaction {
 		super(company, identifier);
 		this.salePrice = price;
 		this.quantity = quantity;	
-		BigDecimal priceBD = new BigDecimal(price);
+		BigDecimal priceBD = BigDecimal.valueOf(price);
 		BigDecimal quantityBD = new BigDecimal(quantity);
 		this.value = priceBD.multiply(quantityBD);		
 	}
@@ -36,7 +36,6 @@ public class SaleTransaction extends Transaction {
 	}
 	
 	public void setValue(BigDecimal value) {
-		// TODO Auto-generated method stub
 		this.value = value;
 	}
 
@@ -47,13 +46,17 @@ public class SaleTransaction extends Transaction {
 	
 	@Override
 	public boolean equals(Object o) {
-		if (o == this) return true;
-        if (!(o instanceof SaleTransaction)) {
+		if (o == this) {
+			return true;
+		}
+		else if (!(o instanceof SaleTransaction)) {
             return false;
         }
-        SaleTransaction s = (SaleTransaction) o;
-        return identifier == s.identifier &&
-        	   company.equals(s.company);     	
+		else { 
+			SaleTransaction s = (SaleTransaction) o;
+			return identifier == s.identifier &&
+									company.equals(s.company); 
+		}
     }
 
     @Override

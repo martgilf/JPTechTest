@@ -1,10 +1,7 @@
 package com.ms.techtest;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.ms.techtest.domain.AdjustmentTransaction;
@@ -30,8 +27,6 @@ public class ProcessMessage {
     private static final String OPERATION	= "operation"; 
     private static final String COMPANY		= "company"; 
     private static final String SALE		= "sale"; 
-	
-	public static List<String> messages = new ArrayList<String> () ;
 	
 	public static void main(String[] args) throws Exception  {		 		
 		JSONArray messages = readMessagesFromFile(args); 	    
@@ -65,7 +60,7 @@ public class ProcessMessage {
 		return messages;
 	}
 	
-	public static JSONArray parseFile(String fileName) throws FileNotFoundException, IOException, ParseException{
+	public static JSONArray parseFile(String fileName) throws IOException, ParseException{
 		JSONParser parser = new JSONParser();
     	return (JSONArray)parser.parse(new FileReader(fileName));         
 	}
@@ -98,7 +93,9 @@ public class ProcessMessage {
 		}
 	    catch (Exception  e) {
         	Logger.log("createSaleTransaction:Problem parsing message:%s%n", e.getMessage()); 
-        	Logger.log("createSaleTransaction:Message:%s%n", jsale.toJSONString());
+        	if ( jsale != null ) {
+        		Logger.log("createSaleTransaction:Message:%s%n", jsale.toJSONString());
+        	}
         	throw e;
 	    }
 	}

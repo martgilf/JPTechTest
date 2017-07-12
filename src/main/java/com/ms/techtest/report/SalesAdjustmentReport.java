@@ -22,7 +22,6 @@ public class SalesAdjustmentReport extends Report {
 	private static final String ADJUSTMENT_SEPARATOR = "%s:%s, ";
 	private static final String PRODUCT_SEPARATOR = "%n%s:%n      ";
 	private static final int NUMBER_OF_ADJUSTMENTS_PER_LINE = 3;
-	//private int frequency = 50;
 	
 	public SalesAdjustmentReport(Repository salesRepository) {
 		repository = salesRepository;
@@ -41,9 +40,10 @@ public class SalesAdjustmentReport extends Report {
 
 	private void reportProductAdjustments(Product product) {
 		Iterator<Transaction> adjs = repository.findAllTransactionsByProduct(product, TransactionType.ADJUSTMENT, OrderType.ASC);
-		for ( int i=0; adjs.hasNext(); i++) {
+		int i=0;
+		for ( ; adjs.hasNext(); i++) {
 			AdjustmentTransaction adj = (AdjustmentTransaction) adjs.next();
-			if ( i==0 | i % NUMBER_OF_ADJUSTMENTS_PER_LINE != 0 ) {
+			if ( i==0 || i % NUMBER_OF_ADJUSTMENTS_PER_LINE != 0 ) {
 				Logger.log(ADJUSTMENT_SEPARATOR, adj.getOperation(), adj.getAmount());
 			} else {
 				Logger.log(NEWLINE_ADJUSTMENT_SEPARATOR, adj.getOperation(), adj.getAmount());

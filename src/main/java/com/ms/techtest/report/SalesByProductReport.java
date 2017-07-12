@@ -41,7 +41,7 @@ public class SalesByProductReport extends Report{
 			SaleTransaction sale = (SaleTransaction) sales.next();
 			total = total.add(sale.getValue());		
 		}
-		System.out.printf("%-25s: Total Sale:%s%n", product.getName(), NumberFormat.getCurrencyInstance().format(total.divide(new BigDecimal(100L),2, BigDecimal.ROUND_HALF_UP)));
+		Logger.log("%-25s: Total Sale:%s%n", product.getName(), NumberFormat.getCurrencyInstance().format(total.divide(new BigDecimal(100L),2, BigDecimal.ROUND_HALF_UP)));
 	}
 	
 }

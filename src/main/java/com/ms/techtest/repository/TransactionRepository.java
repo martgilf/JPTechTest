@@ -30,7 +30,7 @@ public class TransactionRepository implements Repository {
     
 	@Override
 	public void save(Product product, Transaction transaction) throws Exception{
-		if ( store == null || ! store.containsKey(product)) {
+		if ( ! store.containsKey(product)) {
 			List<Transaction> list = new LinkedList<>();
 			list.add(transaction);
 			store.put(product, list);
@@ -72,10 +72,10 @@ public class TransactionRepository implements Repository {
 		}
 		
 		if (orderType==OrderType.ASC) {
-			return (Iterator<Transaction>) result.iterator();
+			return result.iterator();
 		}
 		else {
-			return (Iterator<Transaction>) ((Deque<Transaction>)result).descendingIterator();
+			return ((Deque<Transaction>)result).descendingIterator();
 		}
 	}
 

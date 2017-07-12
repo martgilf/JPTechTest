@@ -20,8 +20,8 @@ public class SalesService  {
 
 	private static final String FAILED_TO_STORE_TRANSACTION = "Failed to store transaction%n";
 	private static final String APP_PAUSING_MESSAGE = "%nApplication is pausing........%n";
-	public static int SALE_COUNT 	= 1;
-	private static int PAUSE        = 1000;
+	private static int SALE_COUNT 	= 1;
+	private static final int PAUSE      = 1000;
 	
 	private int numAdjustmentsForReport;
 	private int numSalesForReport;
@@ -65,27 +65,31 @@ public class SalesService  {
 	}
 	
 	public void applyAdjustmentToProductSale(SaleTransaction sale, AdjustmentTransaction adjustment){
-		BigDecimal adjAmountBD = new BigDecimal(adjustment.getAmount());
+		BigDecimal adjAmountBD = BigDecimal.valueOf(adjustment.getAmount());
 		BigDecimal quantityBD = new BigDecimal(sale.getQuantity());
 		BigDecimal value = sale.getValue();
+		value = calculateNewValue(adjustment, adjAmountBD, quantityBD, value);
+		sale.setValue(value);
+	}
+
+	private BigDecimal calculateNewValue(AdjustmentTransaction adjustment, BigDecimal adjAmountBD,
+			BigDecimal quantityBD, BigDecimal value) {
+		BigDecimal calculatedValue = BigDecimal.valueOf(value.doubleValue());
 		switch (adjustment.getOperation()) {
 			case ADD: {
-				value = value.add(adjAmountBD.multiply(quantityBD));
-				//Logger.log("Value:%f%n",(adjAmountBD.multiply(quantityBD)).doubleValue());
+				calculatedValue = value.add(adjAmountBD.multiply(quantityBD));
 				break; 
 			}
 			case SUBTRACT: {
-				value = value.subtract(adjAmountBD.multiply(quantityBD));
-				//Logger.log("Value:%f%n",value);
+				calculatedValue = value.subtract(adjAmountBD.multiply(quantityBD));
 				break; 
 			}
 			case MULTIPLY: {
-				value = value.multiply(adjAmountBD);
-				//Logger.log("Value:%f%n",value);
+				calculatedValue = value.multiply(adjAmountBD);
 				break;
 			}
 		}
-		sale.setValue(value);
+		return calculatedValue;
 	}
 	
 	private void report() {
@@ -99,6 +103,7 @@ public class SalesService  {
 				Thread.sleep(PAUSE);
 			} 
 			catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
 			}
 			SALE_COUNT=0;
 		}		
