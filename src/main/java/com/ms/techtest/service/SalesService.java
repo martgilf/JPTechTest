@@ -20,8 +20,8 @@ public class SalesService  {
 
 	private static final String FAILED_TO_STORE_TRANSACTION = "Failed to store transaction%n";
 	private static final String APP_PAUSING_MESSAGE = "%nApplication is pausing........%n";
-	private static int SALE_COUNT 	= 1;
 	private static final int PAUSE      = 1000;
+	private int SALE_COUNT 	= 1;
 	
 	private int numAdjustmentsForReport;
 	private int numSalesForReport;
