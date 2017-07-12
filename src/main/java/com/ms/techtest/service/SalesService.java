@@ -21,7 +21,7 @@ public class SalesService  {
 	private static final String FAILED_TO_STORE_TRANSACTION = "Failed to store transaction%n";
 	private static final String APP_PAUSING_MESSAGE = "%nApplication is pausing........%n";
 	private static final int PAUSE      = 1000;
-	private int SALE_COUNT 	= 1;
+	private int saleCount 	= 1;
 	
 	private int numAdjustmentsForReport;
 	private int numSalesForReport;
@@ -93,10 +93,10 @@ public class SalesService  {
 	}
 	
 	private void report() {
-		if (SALE_COUNT % numSalesForReport == 0 ) {
+		if (saleCount % numSalesForReport == 0 ) {
 			salesByProductReport.report();
 		}
-		if (SALE_COUNT % numAdjustmentsForReport == 0 ) {
+		if (saleCount % numAdjustmentsForReport == 0 ) {
 			Logger.log(APP_PAUSING_MESSAGE);
 			salesAdjustmentReport.report();
 			try {
@@ -105,9 +105,9 @@ public class SalesService  {
 			catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
 			}
-			SALE_COUNT=0;
+			saleCount=0;
 		}		
-		SALE_COUNT++;
+		saleCount++;
 	}
 	
 }
