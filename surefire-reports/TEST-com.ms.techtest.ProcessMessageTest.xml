@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="com.ms.techtest.ProcessMessageTest" time="0.038" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="com.ms.techtest.ProcessMessageTest" time="0.064" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_45\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
-    <property name="classworlds.conf" value="C:\Users\Martin\Development\JPTest\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3826238078652993411.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\Martin\Development\JPTest\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf487554286053056731.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_45\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Users\Martin\Development\Java\Libs;C:\Program Files\TortoiseSVN\bin;C:\Users\Martin\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,16 +61,16 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_invalid_adjustment_operation" time="0.02"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_invalid_adjustment_operation" time="0.04"/>
   <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_product_not_provided" time="0"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_sale_amount_is_integer" time="0.002"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_quantity_is_double" time="0.005"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_product_when_provided" time="0.001"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_and_adjustment_when_both_provided" time="0.001"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_sale_not_provided" time="0.002"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_when_quantity_not_provided" time="0.001"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_string_for_identifier" time="0.002"/>
-  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_when_adjustment_not_provided" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_sale_amount_is_integer" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_quantity_is_double" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_product_when_provided" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_and_adjustment_when_both_provided" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_sale_not_provided" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_when_quantity_not_provided" time="0"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_string_for_identifier" time="0.016"/>
+  <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_when_adjustment_not_provided" time="0.004"/>
   <testcase classname="com.ms.techtest.ProcessMessageTest" name="creates_sale_when_amount_is_double" time="0.001"/>
   <testcase classname="com.ms.techtest.ProcessMessageTest" name="throws_exception_when_company_isa_number" time="0.003"/>
 </testsuite>
