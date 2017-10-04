@@ -4,4 +4,4 @@ The message and application design and further details are provided in the assoc
 
 The application build has been automated via Eclipse Maven plugin with associated automated unit testing via JUnit.
 
-Please refer to surefire-reports directory for evidence of testing and test-driven development.
+Please refer to 'src' directory for the Java code and the 'surefire-reports' directory for evidence of testing and test-driven development.
