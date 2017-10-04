@@ -61,6 +61,6 @@ public class SaleTransaction extends Transaction {
 
     @Override
     public int hashCode() {
-        return Objects.hash(identifier, company, this);
+        return Objects.hash(identifier, company, this.getClass().getName());
     }
 }
